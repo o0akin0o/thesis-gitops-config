@@ -1,0 +1,5 @@
+environment: uat
+replicaCount: 2
+image:
+  tag: 1.23-alpine
+  pullPolicy: IfNotPresent

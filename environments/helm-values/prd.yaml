@@ -1,0 +1,12 @@
+environment: prd
+replicaCount: 3
+image:
+  tag: 1.23-alpine
+  pullPolicy: IfNotPresent
+resources:
+  requests:
+    memory: "256Mi"
+    cpu: "250m"
+  limits:
+    memory: "512Mi"
+    cpu: "500m"
