@@ -1,0 +1,27 @@
+# Dev environment values
+replicaCount: 2
+
+image:
+  repository: ghcr.io/o0akin0o/gitops-thesis-demo
+  tag: fa610b66d0d4bf1e98d8196885b9bc55f628e734
+  pullPolicy: Always
+
+service:
+  type: ClusterIP
+  port: 80
+
+ingress:
+  enabled: false
+
+resources:
+  requests:
+    memory: "128Mi"
+    cpu: "100m"
+  limits:
+    memory: "256Mi"
+    cpu: "200m"
+
+environment: development
+#   T e s t i n g   a u t o - s y n c   a f t e r   r e s t a r t 
+ 
+ 
