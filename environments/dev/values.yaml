@@ -3,7 +3,7 @@ replicaCount: 1
 
 image:
   repository: ghcr.io/o0akin0o/gitops-thesis-demo
-  tag: 2772568ed4f5cf3ab01eeb4787f061229b1e30d8
+  tag: bcfe5d29c401fe05bb2104e8c15a7a3a42681893
   pullPolicy: Always
 
 service:
