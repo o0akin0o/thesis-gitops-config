@@ -1,4 +1,4 @@
-# Dev environment values
+# Production environment values
 replicaCount: 3
 
 image:
@@ -21,7 +21,5 @@ resources:
     memory: "256Mi"
     cpu: "200m"
 
-environment: development
-#   T e s t i n g   a u t o - s y n c   a f t e r   r e s t a r t 
- 
- 
+environment: production
+# Production environment configuration
