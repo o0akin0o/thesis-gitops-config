@@ -1,0 +1,43 @@
+name: Validate Config
+
+on:
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'environments/**'
+      - 'charts/**'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+      
+      - name: Validate Helm values
+        run: |
+          # check values files
+          for env in dev uat prd; do
+            echo "🔍 check environments/$env/values.yaml"
+            if [ -f "environments/$env/values.yaml" ]; then
+              # Check replicaCount must number
+              grep -q "replicaCount:" environments/$env/values.yaml || exit 1
+              
+              # check name environment
+              if [ "$env" == "dev" ]; then
+                grep -q "environment: development" environments/$env/values.yaml || exit 1
+              elif [ "$env" == "uat" ]; then
+                grep -q "environment: uat" environments/$env/values.yaml || exit 1
+              elif [ "$env" == "prd" ]; then
+                grep -q "environment: production" environments/$env/values.yaml || exit 1
+              fi
+              
+              echo "✅ $env OK"
+            else
+              echo "❌ Miss file $env"
+              exit 1
+            fi
+          done
