@@ -1,0 +1,22 @@
+# default repo must review from account quanle-sys
+* @quanle-sys
+
+# UAT env - account quanle-sys review
+/environments/uat/ @quanle-sys
+/environments/uat/* @quanle-sys
+
+# PRD env - account quanle-sys review
+/environments/prd/ @quanle-sys
+/environments/prd/* @quanle-sys
+
+# Helm chart - account quanle-sys review
+/charts/ @quanle-sys
+/charts/**/* @quanle-sys
+
+# GitHub workflows - account quanle-sys review
+/.github/workflows/ @quanle-sys
+/.github/workflows/*.yml @quanle-sys
+
+# README and docs - no need review
+/README.md @o0akin0o
+/docs/ @o0akin0o
