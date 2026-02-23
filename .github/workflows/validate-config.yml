@@ -6,7 +6,16 @@ on:
     paths:
       - 'environments/**'
       - 'charts/**'
-
+  merge_group:
+    branches: [ main ]
+    paths:
+      - 'environments/**'
+      - 'charts/**'
+  push:
+    branches: [ main ]
+    paths:
+      - 'environments/**'
+      - 'charts/**'
 jobs:
   validate:
     runs-on: ubuntu-latest
