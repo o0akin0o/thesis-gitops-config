@@ -1,5 +1,5 @@
 ﻿# Dev environment values
-replicaCount: 2
+replicaCount: 1
 
 image:
   repository: ghcr.io/o0akin0o/gitops-thesis-demo
