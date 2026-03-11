@@ -1,9 +1,9 @@
 ﻿# Dev environment values
-replicaCount: 2
+replicaCount: 1
 
 image:
   repository: ghcr.io/o0akin0o/gitops-thesis-demo
-  tag: 8f36a0023eb5725530c5749ca09c3555e795773c
+  tag: lasted
   pullPolicy: Always
 
 service:
